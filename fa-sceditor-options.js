@@ -118,7 +118,7 @@ $(function(){
       'source' : { on : 1, quick : 1, full : 1 }
     }
         
-  }, opts = $.sceditor.defaultOptions, textarea = document.getElementById('text_editor_textarea'), qr = document.getElementById('quick_reply'), selected = my_getcookie('fa_sceditor_theme'), bloc, style, switcher, g, l, a, j, o, i, k;
+  }, opts = $.sceditor.defaultOptions, textarea = document.getElementById('text_editor_textarea'), qr = document.getElementById('quick_reply'), selected = my_getcookie('fa_sceditor_theme'), bloc, style, switcher, l, a, j, o, i, k;
   
   // config options
   // the id helps us find the sceditor much quicker
@@ -136,17 +136,12 @@ $(function(){
   
   // loops our options groups and forms the toolbar
   for (i in options) {
-    a = [], g = 0;
-    for (j in options[i]) {
-      // if the option is enabled we'll push it to our array and add 1 to g
-      if (options[i][j].on) {
-        if ((qr && options[i][j].quick) || (!qr && options[i][j].full)) {
-          a.push(j);
-          g++;
-        }
-      }
-    }
-    (g && toolbar.length) && (toolbar += '|'); // checks if there's options before placing the group divider
+    a = []; // holds our enabled options for each group
+    
+    // if the option is enabled we'll push it to our array
+    for (j in options[i]) ( options[i][j].on && ((qr && options[i][j].quick) || (!qr && options[i][j].full)) ) && a.push(j);
+    
+    (a.length && toolbar.length) && (toolbar += '|'); // checks if there's options before placing the group divider
     for (k = 0, l = a.length; k<l; k++) toolbar += a[k] + ( k < l - 1 ? ',' : '' ); // loops the array to place all options into the toolbar
   }
   
