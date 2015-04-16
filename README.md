@@ -55,7 +55,7 @@ Colors can be entered in hex and multiple colors **should** be separated by a co
 
 Themes gives you the ability to change the style of the SCEditor by using an external CSS stylesheet. Much like the example in the SCEditor example. I've only included a few themes from the SCEditor documents which I've modified to work with the FA SCEditor. Please note that the server I host them on may have some downtime, so there's the possibility that a theme wont display. Anyway, let's get on with the explanation.
 
-The themes object is simple, it consists of name:source pairs. That is the name of the theme and the link to its stylesheet. It looks like this :
+The themes object is simple, it consists of **name:source** pairs. That is the name of the theme and the link to its stylesheet. It looks like this :
 ```javascript
 themes = {
   'Default' : 'http://illiweb.com/rsc/98/frm/SCEditor/src/themes/fa.default.min.css',
@@ -86,4 +86,4 @@ To the left is the name of the button, and to the right is the display settings 
 
 **full** : Choose if the button displays in the full editor or not
 
-It's simple to modify. You should know that 1 = on and 0 = off.. ( A majhority of options are boolean ) Also know that you can move around the buttons to place them in different groups, just make sure to watch the placement of your commas to avoid errors.
+It's simple to modify. You should know that 1 = on and 0 = off.. ( A majority of options are boolean ) Also know that you can move around the buttons to place them in different groups, just make sure to watch the placement of your commas to avoid errors.
